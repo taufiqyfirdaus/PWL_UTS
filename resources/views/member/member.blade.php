@@ -55,11 +55,16 @@
                     <!-- Bikin tombol edit dan delete -->
                     <a href="{{ url('/member/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
 
-                    <form method="POST" action="{{ url('/member/'.$m->id) }}" >
+                    {{-- <form method="POST" action="{{ url('/member/'.$m->id) }}" >
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-sm btn-danger">hapus</button>
-                    </form>
+                    </form> --}}
+                    <form method="POST" action="{{ url('/member/'.$m->id) }}">
+                      @csrf
+                      <input name="_method" type="hidden" value="DELETE">
+                      <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
+                  </form>
                   </td>
                 </tr>
               @endforeach
@@ -80,8 +85,27 @@
   </section>
   <!-- /.content -->
 </div>
+
 @endsection
 @push('custom_js')
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: 'Apakah anda yakin ingin menghapus data ini?',
+              text: "jika anda menghapus, maka data ini akan hilang selamanya",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
 </script>
 @endpush
