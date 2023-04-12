@@ -54,4 +54,7 @@
 </div>
 @endsection
 @push('custom_js')
+<script>
+  alert('Selamat Datang!! di LaundryKuy')
+</script>
 @endpush

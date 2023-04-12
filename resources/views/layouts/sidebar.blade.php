@@ -27,7 +27,7 @@
           <a href="{{ url('/jasa') }}" class="nav-link">
             <i class="nav-icon fas fa-align-left"></i>
             <p>
-              Daftar Harga
+              Daftar Jasa
             </p>
           </a>
         </li>

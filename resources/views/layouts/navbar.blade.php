@@ -38,9 +38,11 @@
       </a>
     </li>
     <li class="nav-item">
-      <button class="btn btn-danger btn-block" type="button">
+      <a href="{{ url('/logout') }}">
+      <button  class="btn btn-danger btn-block" type="button">
         Logout
       </button>
+    </a>
     </li>
   </ul>
 </nav>
