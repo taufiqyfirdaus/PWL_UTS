@@ -14,7 +14,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $mbr = MemberModel::all();
+        $mbr = MemberModel::paginate(5);
         return view('member.member')
         ->with('mbr', $mbr);
     }
@@ -106,6 +106,13 @@ class MemberController extends Controller
         MemberModel::where('id', '=', $id)->delete();
         return redirect('member')
         ->with('success', 'Member Berhasil Dihapus');
+    }
+    public function cariMember(Request $request)
+    {
+        $cariMember = $request->cariMember;
+        $mbr = MemberModel::where('nama', 'like', '%'.$cariMember.'%')->paginate(5);
+        return view('member.member')
+        ->with('mbr', $mbr);
     }
 }
 

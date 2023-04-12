@@ -6,12 +6,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <form class="row mb-3 mt-5" action="{{ route('cariMember') }}" method="POST">
+          <form class="row mb-3 mt-5" action="{{ route('cariJasa') }}" method="POST">
             @csrf
             <div class="col-md-6">
                 <div class="d-flex flex-row">
-                    <input type="text" value="{{ (request()->cariMember) ? request()->cariMember : '' }}" name="cariMember" 
-                    class="form-control" placeholder="Cari Member">
+                    <input type="text" value="{{ (request()->cariJasa) ? request()->cariJasa : '' }}" name="cariJasa" 
+                    class="form-control" placeholder="Cari Jenis Jasa">
                     <button type="submit" class="btn btn-primary ml-3">Cari</button>
                 </div>
             </div>
@@ -24,11 +24,11 @@
 
   <!-- Main content -->
   <section class="content">
-    
+
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Member</h3>
+        <h3 class="card-title">Jasa</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -40,37 +40,38 @@
         </div>
       </div>
       <div class="card-body">
-        <a href="{{url('member/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-        <table class="table table-bordered tabel-hover">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Kode Member</th>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>No.HP</th>
-            <th>Action</th>
-          </tr>
+        <a href="{{url('jasa/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Kode Jasa</th>
+              <th>Jenis Jasa</th>
+              <th>Nama Jasa</th>
+              <th>Harga</th>
+              <th>Action</th>
+            </tr>
           </thead>
           <tbody>
-            @if($mbr->count() > 0)
-              @foreach($mbr as $i => $m)
+            @if($js->count() > 0)
+              @foreach($js as $i => $j)
                 <tr>
                   <td>{{++$i}}</td>
-                  <td>{{ $m->kode_member }}</td>
-                  <td>{{ $m->nama }}</td>
-                  <td>{{ $m->alamat }}</td>
-                  <td>{{ $m->hp }}</td>
+                  <td>{{$j->kode_jasa}}</td>
+                  <td>{{$j->jenis_jasa}}</td>
+                  <td>{{$j->nama_jasa}}</td>
+                  <td>{{$j->harga}}</td>
                   <td>
                     <!-- Bikin tombol edit dan delete -->
-                    <a href="{{ url('/member/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
+                    <a href="{{ url('/jasa/'. $j->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
 
-                    {{-- <form method="POST" action="{{ url('/member/'.$m->id) }}" >
+                    {{-- <form method="POST" action="{{ url('/jasa/'.$j->id) }}" >
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-sm btn-danger">hapus</button>
                     </form> --}}
-                    <form method="POST" action="{{ url('/member/'.$m->id) }}">
+                    <form method="POST" action="{{ url('/jasa/'.$j->id) }}">
                       @csrf
                       <input name="_method" type="hidden" value="DELETE">
                       <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
@@ -81,25 +82,25 @@
             @else
               <tr><td colspan="6" class="text-center">Data tidak ada</td></tr>
             @endif
-            </tbody>
+          </tbody>
         </table>
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
         <div class="row">
           <div class="col-md-12">
-            {{$mbr->links() }}
+            {{$js->links() }}
           </div>
         </div>
       </div>
       <!-- /.card-footer-->
+      
     </div>
     <!-- /.card -->
 
   </section>
   <!-- /.content -->
 </div>
-
 @endsection
 @push('custom_js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
