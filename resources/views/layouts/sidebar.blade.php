@@ -2,7 +2,7 @@
   <!-- Brand Logo -->
   <a href="../../index3.html" class="brand-link">
     <!-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <span class="brand-text font-weight-light">Laundry Kuy</span>
   </a>
 
   <!-- Sidebar -->
@@ -13,7 +13,7 @@
         <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div> -->
       <div class="info">
-        <a href="#" class="d-block">Taufiqy Firdaus</a>
+        <a href="#" class="d-block">Kelompok 7</a>
       </div>
     </div>
 
@@ -24,66 +24,18 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <a href="/dashboard" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/profile" class="nav-link">
-            <i class="nav-icon fas fa-user"></i>
-            <p>
-              Profile
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/pengalaman" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Pengalaman Kuliah
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/artikel" class="nav-link">
+          <a href="{{ url('/jasa') }}" class="nav-link">
             <i class="nav-icon fas fa-align-left"></i>
             <p>
-              Artikel
+              Daftar Harga
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ url('/hobi') }}" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
+          <a href="{{ url('/member') }}" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
             <p>
-              Hobi
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ url('/keluarga') }}" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Keluarga
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ url('/matkul') }}" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Mata Kuliah
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ url('/mahasiswa') }}" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Mahasiswa
+              Member
             </p>
           </a>
         </li>

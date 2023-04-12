@@ -6,12 +6,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Blank Page</h1>
+          <h1>Selamat Datang!!</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/jasa') }}">Daftar Harga</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/member') }}">Member</a></li>
           </ol>
         </div>
       </div>
@@ -24,7 +25,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Title</h3>
+        <h3 class="card-title">Laundry Kuy</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,11 +37,13 @@
         </div>
       </div>
       <div class="card-body">
-        Start creating your amazing application!
+        <b>Anggota Kelompok 7 :</b> <br>
+        Dwi Paga Ayuba    (11/2141720251) <br>
+        Taufiqy Firdaus J (27/2141720124) 
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
-        Footer
+        
       </div>
       <!-- /.card-footer-->
     </div>
@@ -51,7 +54,4 @@
 </div>
 @endsection
 @push('custom_js')
-<script>
-    alert('selamat datang')
-</script>
 @endpush
