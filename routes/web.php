@@ -27,9 +27,9 @@ Route::middleware(['auth'])->group(function(){
    
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::resource('/jasa', JasaController::class);
-    Route::post('/cariJasa', [JasaController::class, 'cariJasa'])->name('cariJasa');
+    Route::get('/cariJasa', [JasaController::class, 'cariJasa'])->name('cariJasa');
 
     Route::resource('/member', MemberController::class);
-    Route::post('/cariMember', [MemberController::class, 'cariMember'])->name('cariMember');
+    Route::get('/cariMember', [MemberController::class, 'cariMember'])->name('cariMember');
 });
 

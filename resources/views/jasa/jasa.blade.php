@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <form class="row mb-3 mt-5" action="{{ route('cariJasa') }}" method="POST">
+          <form class="row mb-3 mt-5" action="{{ route('cariJasa') }}" method="GET">
             @csrf
             <div class="col-md-6">
                 <div class="d-flex flex-row">
