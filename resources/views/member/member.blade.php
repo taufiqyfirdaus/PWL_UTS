@@ -88,7 +88,8 @@
       <div class="card-footer">
         <div class="row">
           <div class="col-md-12">
-            {{$mbr->links() }}
+            {{-- {{$mbr->links() }} --}}
+            {{ $mbr->appends(request()->except('page'))->links() }}
           </div>
         </div>
       </div>

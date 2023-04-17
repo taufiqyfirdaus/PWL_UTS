@@ -111,7 +111,7 @@ class JasaController extends Controller
     }
     public function cariJasa(Request $request)
     {
-        $cariJasa = $request->cariJasa;
+        $cariJasa = $request->input('cariJasa');
         $js = JasaModel::where('jenis_jasa', 'like', '%'.$cariJasa.'%')->paginate(5);
         return view('jasa.jasa', [
             'js' => $js

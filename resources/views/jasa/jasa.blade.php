@@ -89,7 +89,8 @@
       <div class="card-footer">
         <div class="row">
           <div class="col-md-12">
-            {{$js->links() }}
+            {{-- {{$js->links() }} --}}
+            {{ $js->appends(request()->except('page'))->links() }}
           </div>
         </div>
       </div>

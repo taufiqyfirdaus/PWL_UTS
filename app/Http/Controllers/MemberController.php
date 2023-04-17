@@ -109,7 +109,7 @@ class MemberController extends Controller
     }
     public function cariMember(Request $request)
     {
-        $cariMember = $request->cariMember;
+        $cariMember = $request->input('cariMember');
         $mbr = MemberModel::where('nama', 'like', '%'.$cariMember.'%')->paginate(5);
         return view('member.member')
         ->with('mbr', $mbr);
